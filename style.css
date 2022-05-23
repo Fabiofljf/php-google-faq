@@ -13,7 +13,6 @@ img {
 
 .list_special {
     list-style-type: none;
-    color: #3D4043;
 }
 
 a {
@@ -51,5 +50,9 @@ p {
 
 .spc_text {
     font-size: 13px;
+    color: #3D4043;
+}
+
+.text_special {
     color: #3D4043;
 }
