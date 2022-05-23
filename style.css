@@ -10,7 +10,7 @@ img {
     max-width: 100%;
 }
 
-li {
+.list_special {
     list-style-type: none;
 }
 

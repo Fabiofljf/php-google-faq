@@ -38,21 +38,21 @@ $dati = [
         "risposta" =>
         [
             "paragrafo1" => "Il tuo account è associato a un paese (o territorio) nei Termini di servizio per poter stabilire due cose:",
-            "paragrafo2" => "La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:",
-            "paragrafo3" => "Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.",
-            "paragrafo4" => "Google LLC, con sede negli Stati Uniti, per il resto del mondo.",
-            "paragrafo5" => "La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali.",
+            "paragrafo2" => " <ol> <li> La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:",
+            "paragrafo3" => "<ol type='a'><li>Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.</li>",
+            "paragrafo4" => "<li>Google LLC, con sede negli Stati Uniti, per il resto del mondo.</li></ol>",
+            "paragrafo5" => "</li><li>La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali. </li> </ol>",
             "paragrafo6" => "Tieni presente che i servizi Google sono fondamentalmente gli stessi a prescindere dalla società consociata che li offre o dal paese a cui è associato il tuo account.",
-            "paragrafo7" => "Stabilire il paese associato al tuo account",
+            "paragrafo7" => "<h5>Stabilire il paese associato al tuo account</h5>",
             "paragrafo8" => "Quando crei un nuovo Account Google, lo associamo a un paese in base a dove è stato creato. Per quanto riguarda gli account creati almeno un anno fa, usiamo il paese da cui accedi solitamente ai servizi Google, in genere i servizi in cui hai trascorso più tempo nell'ultimo anno.",
             "paragrafo9" => "I viaggi frequenti solitamente non influiscono sul paese associato al tuo account. Se ti trasferisci in un altro paese, potrebbe occorrere circa un anno per aggiornare l'associazione del paese.",
-            "paragrafo10" => "Se il paese associato al tuo account non corrisponde al tuo paese di residenza, il motivo potrebbe essere la differenza tra il paese in cui lavori e il paese in cui risiedi, l'installazione di una rete privata virtuale (VPN) per mascherare il tuo indirizzo IP oppure la residenza vicino a un confine territoriale. Contattaci se ritieni che il paese associato al tuo account sia sbagliato.",
+            "paragrafo10" => "Se il paese associato al tuo account non corrisponde al tuo paese di residenza, il motivo potrebbe essere la differenza tra il paese in cui lavori e il paese in cui risiedi, l'installazione di una rete privata virtuale (VPN) per mascherare il tuo indirizzo IP oppure la residenza vicino a un confine territoriale. <span class='c_text'> <a href='#null'>Contattaci</a> </span> se ritieni che il paese associato al tuo account sia sbagliato.",
 
         ],
     ],
     [
         "domanda" => "Come faccio a rimuovere informazioni su di me dai risultati di ricerca di Google?",
-        "risposta" => "I risultati di ricerca di Google rispecchiano i contenuti pubblicamente disponibili sul Web. I motori di ricerca non possono rimuovere i contenuti direttamente dai siti web, quindi rimuovere risultati di ricerca da Google non consente di rimuovere i contenuti dal Web. Se desideri rimuovere qualcosa dal Web, devi contattare il webmaster del sito su cui sono pubblicati i contenuti e chiedergli di apportare una modifica. Inoltre, se, ai sensi delle leggi europee per la protezione dei dati, desideri richiedere la rimozione di determinate informazioni su di te visualizzate nei risultati di ricerca di Google, fai clic qui. Una volta che i contenuti saranno stati rimossi e che Google avrà rilevato l'aggiornamento, le informazioni non verranno più visualizzate nei risultati di ricerca di Google. In caso di una richiesta di rimozione urgente, è inoltre possibile visitare la nostra pagina di assistenza per avere ulteriori informazioni."
+        "risposta" => "I risultati di ricerca di Google rispecchiano i contenuti pubblicamente disponibili sul Web. I motori di ricerca non possono rimuovere i contenuti direttamente dai siti web, quindi rimuovere risultati di ricerca da Google non consente di rimuovere i contenuti dal Web. Se desideri rimuovere qualcosa dal Web, devi <span class='c_text'> <a href='#null'>contattare il webmaster</a> </span> del sito su cui sono pubblicati i contenuti e chiedergli di apportare una modifica. Inoltre, se, ai sensi delle leggi europee per la protezione dei dati, desideri richiedere la rimozione di determinate informazioni su di te visualizzate nei risultati di ricerca di Google, fai clic qui. Una volta che i contenuti saranno stati rimossi e che Google avrà rilevato l'aggiornamento, le informazioni non verranno più visualizzate nei risultati di ricerca di Google. In caso di una richiesta di rimozione urgente, è inoltre possibile visitare la nostra pagina di assistenza per avere ulteriori informazioni."
     ],
     [
         "domanda" => "Quando faccio clic sui risultati della Ricerca Google, le mie chiavi di ricerca vengono inviate ai siti web?",
@@ -67,8 +67,8 @@ foreach ($dati as $array) {
     // var_dump($array['domanda']); // Domande delle singole array.
     // var_dump($array['risposta']); // Risposte delle singole array.
     foreach ($array['risposta'] as $key => $value) {
-         var_dump($key);
-        // var_dump($info['paragrafo1']);
+        // var_dump($key); // - I "Paragrafi".
+        // var_dump($value); // - Il contenuto dei paragrafi.
     }
 }
 
@@ -103,7 +103,7 @@ foreach ($dati as $array) {
         <div id="Downheader">
             <ul class="d-flex m-0 mt-2 ps-3 border-bottom">
                 <?php for ($i = 0; $i <= count($menu); $i++) { ?>
-                    <li class="me-3 <?php echo ($menu[$i] === 'Domande frequenti') ? 'active' : '' ?>">
+                    <li class="me-3 list_special <?php echo ($menu[$i] === 'Domande frequenti') ? 'active' : '' ?>">
                         <?php echo $menu[$i] ?>
                     </li>
                 <?php } ?>
@@ -113,21 +113,24 @@ foreach ($dati as $array) {
     </section>
     <!-- /#site_header -->
 
-    <section id="questions" class="mt-5">
-        <div class="container">
-            <div class="row flex-column">
-                <?php foreach ($dati as $array) : ?>
-                    <div class="col">
-                        <h2> <?php echo $array['domanda'] ?> </h2>
-                        <?php foreach ($array['risposta'] as $key => $value) : ?>
-                            <p> <?php echo $value ?> </p>
-                        <?php endforeach; ?>
-                    </div>
-                <?php endforeach; ?>
+    <section id="site_main">
+        <section id="questions" class="mt-5">
+            <div class="container">
+                <div class="row flex-column">
+                    <?php foreach ($dati as $array) : ?>
+                        <div class="col">
+                            <h2> <?php echo $array['domanda'] ?> </h2>
+                            <?php foreach ($array['risposta'] as $key => $value) : ?>
+                                <p> <?php echo $value ?> </p>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
-        </div>
+        </section>
+        <!-- /#questions -->
     </section>
-    <!-- /#questions -->
+    <!-- /#site_main -->
 
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
