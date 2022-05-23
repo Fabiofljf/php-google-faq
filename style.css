@@ -13,3 +13,12 @@ img {
 li {
     list-style-type: none;
 }
+
+
+/* UTILITIES */
+
+.active {
+    color: #3E69CF;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #3E69CF;
+}

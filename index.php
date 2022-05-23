@@ -7,7 +7,7 @@ Gestire il “Database” e la visualizzazione di queste domande e risposte con 
 <?php
 // Imposto struttura dati menu.
 
-$menu = [ "Introduzione", "Norme sulla privacy", "Termini di servizio", "Tecnologie", "Domande frequenti"];
+$menu = ["Introduzione", "Norme sulla privacy", "Termini di servizio", "Tecnologie", "Domande frequenti"];
 
 // Imposto la struttura dati.
 
@@ -62,33 +62,35 @@ $dati = [
 
 // var_dump($dati);
 
-foreach($dati as $array){
+foreach ($dati as $array) {
     // var_dump($array); array completa.
     // var_dump($array['domanda']); // domande.
-    foreach($array['risposta'] as $info){
+    foreach ($array['risposta'] as $info) {
         // var_dump($info);
         // var_dump($info['paragrafo1']);
-    }    
+    }
 }
 
 ?>
 
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS v5.0.2 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Link CSS -->
     <link rel="stylesheet" href="./style.css">
     <!-- TITLE -->
     <title>Document</title>
-  </head>
-  <body>
+</head>
+
+<body>
 
     <section id="site_header">
         <div id="Upheader" class="d-flex">
@@ -98,11 +100,11 @@ foreach($dati as $array){
         <!-- /#Upheader -->
 
         <div id="Downheader">
-            <ul class="d-flex m-0 mt-2 ps-1 pb-2 border-bottom">
-                <?php for($i = 0; $i <= count($menu); $i++) { ?>
-                <li class="me-3">
-                    <?php echo $menu[$i] ?>
-                </li>
+            <ul class="d-flex m-0 mt-2 ps-1 border-bottom">
+                <?php for ($i = 0; $i <= count($menu); $i++) { ?>
+                    <li class="me-3 <?php echo ($menu[$i] === 'Domande frequenti') ? 'active' : '' ?>">
+                        <?php echo $menu[$i] ?>
+                    </li>
                 <?php } ?>
             </ul>
         </div>
@@ -113,19 +115,20 @@ foreach($dati as $array){
     <section id="questions">
         <div class="container">
             <div class="row flex-column">
-                <?php foreach($dati as $array) : ?>
-                <div class="col">
-                    <h2> <?php echo $array['domanda'] ?> </h2>
+                <?php foreach ($dati as $array) : ?>
+                    <div class="col">
+                        <h2> <?php echo $array['domanda'] ?> </h2>
 
-                </div>
+                    </div>
                 <?php endforeach; ?>
             </div>
         </div>
     </section>
     <!-- /#questions -->
-    
+
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-  </body>
+</body>
+
 </html>
