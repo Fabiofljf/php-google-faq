@@ -63,8 +63,10 @@ $dati = [
 // var_dump($dati);
 
 foreach ($dati as $array) {
-    // var_dump($array); array completa.
-    // var_dump($array['domanda']); // domande.
+    // var_dump($array); // - Singole array complete.
+    // var_dump($array['domanda']); // Domande delle singole array.
+     var_dump($array['risposta']); // Risposte delle singole array.
+
     foreach ($array['risposta'] as $info) {
         // var_dump($info);
         // var_dump($info['paragrafo1']);
@@ -93,14 +95,14 @@ foreach ($dati as $array) {
 <body>
 
     <section id="site_header">
-        <div id="Upheader" class="d-flex">
+        <div id="Upheader" class="d-flex p-3">
             <img style="width:150px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Google_logo_%282010-2013%29.svg/2560px-Google_logo_%282010-2013%29.svg.png" alt="logo google">
             <h1 class="ms-2">Privacy e Termini</h1>
         </div>
         <!-- /#Upheader -->
 
         <div id="Downheader">
-            <ul class="d-flex m-0 mt-2 ps-1 border-bottom">
+            <ul class="d-flex m-0 mt-2 ps-3 border-bottom">
                 <?php for ($i = 0; $i <= count($menu); $i++) { ?>
                     <li class="me-3 <?php echo ($menu[$i] === 'Domande frequenti') ? 'active' : '' ?>">
                         <?php echo $menu[$i] ?>
@@ -112,7 +114,7 @@ foreach ($dati as $array) {
     </section>
     <!-- /#site_header -->
 
-    <section id="questions">
+    <section id="questions" class="mt-5">
         <div class="container">
             <div class="row flex-column">
                 <?php foreach ($dati as $array) : ?>
