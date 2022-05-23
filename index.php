@@ -5,6 +5,10 @@ Gestire il “Database” e la visualizzazione di queste domande e risposte con 
  -->
 
 <?php
+// Imposto struttura dati menu.
+
+$menu = [ "Introduzione", "Norme sulla privacy", "Termini di servizio", "Tecnologie", "Domande frequenti"];
+
 // Imposto la struttura dati.
 
 $dati = [
@@ -59,9 +63,12 @@ $dati = [
 // var_dump($dati);
 
 foreach($dati as $array){
-    var_dump($array);
-    var_dump($array['domanda']);
-    
+    // var_dump($array); array completa.
+    // var_dump($array['domanda']); // domande.
+    foreach($array['risposta'] as $info){
+        // var_dump($info);
+        // var_dump($info['paragrafo1']);
+    }    
 }
 
 ?>
@@ -76,10 +83,32 @@ foreach($dati as $array){
     <!-- Bootstrap CSS v5.0.2 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="./style.css">
     <!-- TITLE -->
     <title>Document</title>
   </head>
   <body>
+
+    <section id="site_header">
+        <div id="Upheader" class="d-flex">
+            <img style="width:150px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Google_logo_%282010-2013%29.svg/2560px-Google_logo_%282010-2013%29.svg.png" alt="logo google">
+            <h1 class="ms-2">Privacy e Termini</h1>
+        </div>
+        <!-- /#Upheader -->
+
+        <div id="Downheader">
+            <ul class="d-flex m-0 mt-2 ps-1 pb-2 border-bottom">
+                <?php for($i = 0; $i <= count($menu); $i++) { ?>
+                <li class="me-3">
+                    <?php echo $menu[$i] ?>
+                </li>
+                <?php } ?>
+            </ul>
+        </div>
+        <!-- /#Downheader -->
+    </section>
+    <!-- /#site_header -->
 
     <section id="questions">
         <div class="container">
@@ -87,7 +116,7 @@ foreach($dati as $array){
                 <?php foreach($dati as $array) : ?>
                 <div class="col">
                     <h2> <?php echo $array['domanda'] ?> </h2>
-                    
+
                 </div>
                 <?php endforeach; ?>
             </div>
