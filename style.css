@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
 
 img {
@@ -12,6 +13,7 @@ img {
 
 .list_special {
     list-style-type: none;
+    color: #3D4043;
 }
 
 a {
@@ -29,4 +31,25 @@ a {
 
 .c_text {
     color: #3E69CF;
+}
+
+h1 {
+    font-size: 20px;
+    color: #3D4043;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #3D4043;
+}
+
+p {
+    font-size: 13px;
+    color: #3D4043;
+}
+
+.spc_text {
+    font-size: 13px;
+    color: #3D4043;
 }
